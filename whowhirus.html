@@ -1,0 +1,180 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+<meta  name="viewport" content="width=device-width, initial-scale=1">
+        <title>who?</title>
+      
+       <style text="text/css">
+            body {
+    background-color:#333B40;
+}#div{
+
+    width:250px;
+    height:200px;
+    background-color:#333;
+    position:relative ;
+    margin:0 auto;
+    border:solid black 2px;
+    border-radius:8px;
+    
+}.ddiv{
+text-align:center;
+text-top:5px;
+
+    height:35px;
+    margin:5px;
+    background-color:#F2F3F4;
+    border:solid black 1px;
+    border-radius:4px;
+    padding-top:5px;
+    
+    
+}#bdiv{
+top:10px;
+    width:80px;
+    position:relative ;
+    margin:0 auto;
+    
+    
+}.b{
+    background-color:#333;
+    border:solid black 1px;
+    border-radius:4px;
+    width:80px;
+    height:30px;
+    color:#F0F8FF ;
+    padding:0px 5px;
+}  #bhelp{
+    position:absolute;
+    left:1px;
+    bottom:1px;
+}          
+            
+            
+        </style>
+    </head>
+    <body>
+        <div  id="div">
+            
+  <div id="d1" class="ddiv">случай 1</div>  
+  <div id="d2" class="ddiv">случай 2</div>     
+  <div id="d3" class="ddiv">случай 3</div> 
+  <div id="d4" class="ddiv">случай 4</div>  
+          
+        </div>
+   <div id="bdiv">
+            
+   <button onclick="run();" class="b" id="b">хуярь</button>
+       <div hidden id="dwho"></div>
+   </div>
+   <button id="bhelp" onclick="help();" class="b">что делать?</button>
+        <script>
+       var dsycont=""
+        var huila=false
+        
+            frrun=0
+var x =document.getElementById ("dwho")
+
+function run(){
+
+var i=3
+var y=0
+var yc
+var d1=document.getElementById ("d1")
+var d2=document.getElementById ("d2")
+var d3=document.getElementById ("d3")
+var d4=document.getElementById ("d4")
+var ds=[d1,d2,d3,d4]
+//console.log(frrun)
+if(frrun==0){retryc=true}
+if(frrun!=0){
+var retryc=confirm("Переназначить имена?")
+}else{
+    frrun++
+}
+
+//frrun++
+
+if(retryc==true){
+
+var who=prompt("Кто будет...?")
+
+var x =document.getElementById ("dwho")
+x.textContent=who
+
+while(y<=3){
+yc=y+1
+
+ds[y].textContent=prompt( yc+" Случай")
+dsycont=ds[y].textContent
+var d1=dsycont.replace(/\s/g, '')
+var d2=d1.toUpperCase()
+console.log(d2)
+if(
+d2=="ИГОРЬ" ||
+d2=="ИГОРЕК"
+//var yrec=y
+)
+{
+//console.log("huila")
+huila=true
+}
+y++
+}}
+while (i>=0){
+
+
+
+ds[i].style.background="white"
+    
+    i--
+}
+var rndm=Math.ceil(Math.random()*4)-1
+//var dsv=ds[rndm].value
+//console.log(dsv)
+var dsv=ds[rndm].textContent 
+//console.log("dsv: "+dsv)
+//console.log(   dsv  !="" )
+//console.log(   x.textContent!="" )
+var x =document.getElementById ("dwho")
+var xtc=x.textContent
+if(dsv  !=""  ){
+var x =document.getElementById ("dwho")
+
+ds[rndm].style.background="red"
+var x =document.getElementById ("dwho")
+who=x.textContent
+ 
+if(who==undefined){
+
+who="???"
+setTimeout(()=>alert(ds[rndm].textContent +" оказался " +who),500)
+
+}else{
+    
+ if(huila){
+     alert("ПАШОЛ НАХУЙ ПИДРИЛА,САМ ТЫ ОКАЗАЛСЯ " +who )
+ }
+  else{
+   
+setTimeout(()=>alert(ds[rndm].textContent +" оказался " +who),500)
+    }
+}}else{
+alert(    "Ну ты ебанат?\nнахуй пустые поля оставил?\nдавай по новой")
+   frrun=0
+   // console.log(frrun)
+}
+
+
+}function help(){
+    alert("Сначала,введи слово в творительном падеже   \nНапример:Хуеглазом")
+    alert("далее,нужно ввести 4 'жертвы' например:\nхуй,корзина,член,елда")
+    alert(" после чего жертва,выбранная случайным образом,будет подсвечена красным\nЭто все")
+}
+            
+        </script>
+    </body>
+</html>
